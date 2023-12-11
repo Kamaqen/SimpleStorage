@@ -9,5 +9,5 @@ contract SimpleStorage {
     int256 favoriteInt = -6;
     address abAddress = 0xF4FaCa935238f1F12ce0E5499a567946b8556A0B;
     bytes32 favoriteBytes = "cat"; // bytes with no size means it accepts any size but also best to specify... More on bytes coming soon!
-
+    // Paused video at: 2:17:42
 }
