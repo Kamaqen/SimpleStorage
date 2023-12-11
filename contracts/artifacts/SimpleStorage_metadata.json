@@ -33,11 +33,11 @@
 	},
 	"sources": {
 		"contracts/SimpleStorage.sol": {
-			"keccak256": "0x4a54d9575303b839d136830d9aaea0a5abb2c5a92d988265ac54ddc6382a4aa4",
+			"keccak256": "0xa8db470ef31315bbd7491c9d575a6010b9658c87202fac9c88d1d02ff90f8871",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://29a64b5adea880104999091a959cd1b0263c0323076a3bcaae5930144cf1b3fb",
-				"dweb:/ipfs/QmVGG9RH9uMZAD5hB3MndVdgu3dVrvZyXPjbcduQBteZgp"
+				"bzz-raw://3ac6c95fe2d854b6b69229647ad66d797519e5d01afbc12ff6e26b70affe0ab6",
+				"dweb:/ipfs/QmPaYZi783nNs6vkEP9b6itT57aaapMNnNLSZDoyZGCbsd"
 			]
 		}
 	},
