@@ -15,6 +15,8 @@ contract SimpleStorage {
 
     // People public person = People({favoriteNumber: 2, name: "Patrick"});
 
+    mapping(string => uint256) public nameToFavoriteNumber;
+
     struct People {
         uint256 favoriteNumber;
         string name;
@@ -53,7 +55,15 @@ contract SimpleStorage {
     */
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
         people.push(People(_favoriteNumber, _name));
+        nameToFavoriteNumber[_name] = _favoriteNumber;
     }
+
+    // calldata, memory, storage
+    // - You need to specify the data location for the types:
+    //      - arrays - structs - mappings
+    // - If not specified, the variables are stored in storage (these variables can be modified and it's a permanent storage).
+    // - If you use memory, the variable can be modified and it's temporary storage.
+    // - If you use calldata, the variable can NOT be modified and it's a temporary storage.
 
     
 }
