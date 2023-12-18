@@ -28,7 +28,7 @@ contract SimpleStorage {
     // The array below is called a dynamic array, because the length can vary.
     People[] public people;
 
-    function store(uint256 _favoriteNumber) public  {
+    function store(uint256 _favoriteNumber) public  virtual {
         favoriteNumber = _favoriteNumber;
         // uint256 testVar = 5;
     }

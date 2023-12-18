@@ -4,7 +4,95 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_favoriteNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "addPerson",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "nameToFavoriteNumber",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "people",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "favoriteNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "retrieve",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_favoriteNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "store",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -33,11 +121,19 @@
 	},
 	"sources": {
 		"contracts/ExtraStorage.sol": {
-			"keccak256": "0xd6060f5651c4dd91423355a4156556fcbfa4ae2ccc90d31f4407b2b21c5256e4",
+			"keccak256": "0xca4cbe9b435ff88ecb3680c57b458eb68d4cee500111937c35316b7be105f706",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://db477ab8f084c732264db8be17fab3d9dda6f85a2b5513a5adf876970ab95975",
-				"dweb:/ipfs/QmTff5sc5GjgDkCFywQirS8sZB7EJ2QatrPyuC8Eiio3gi"
+				"bzz-raw://714e1f06c5efe0c81f358c103ef0bfa92f43db1214dd1c3d39a31d74704576d2",
+				"dweb:/ipfs/QmYewMTqc9597t9VwamCvE52EksTVh9Kk7GQhkVvsta37w"
+			]
+		},
+		"contracts/SimpleStorage.sol": {
+			"keccak256": "0x1b404baec04e4266b8c9674cfe0d4a95df37e3bfc9e7738bf66237f31623b659",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7bf59f5d8d3c3f37759aa571321aa6e5aa0ea20b5e5385d0e6a1c0d017996d38",
+				"dweb:/ipfs/QmVMbqTKBBDUf9mougAb81WfB9djvSzmpXQYhWAa8CWrhz"
 			]
 		}
 	},
