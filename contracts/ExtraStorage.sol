@@ -3,6 +3,8 @@ pragma solidity ^0.8.8;
 
 import "./SimpleStorage.sol";
 
+// We declare an inherited contract with the keyword 'is'.
+
 contract ExtraStorage is SimpleStorage {
     // add 5 to any given number
     // It's possible to override inherited functions
