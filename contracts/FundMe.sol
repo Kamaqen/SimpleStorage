@@ -19,13 +19,13 @@ contract FundMe {
         // Otherwise, the transaction reverts.
     }
 
-    function getPrice() {
+    function getPrice() public{
         // Requirements: 
         // ABI 
         // contract Address 0x694AA1769357215DE4FAC081bf1f309aDC325306
     }
 
-    function getConversionRate(){}
+    function getConversionRate() public {}
 
     // function withdraw(){}
 }

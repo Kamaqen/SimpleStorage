@@ -11,6 +11,20 @@
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getConversionRate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getPrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -41,11 +55,11 @@
 	},
 	"sources": {
 		"contracts/FundMe.sol": {
-			"keccak256": "0x0eba37b59cc82609c664933bb0570aab95f08d155aae061b05686174a812fc31",
+			"keccak256": "0x406042d4c12b7a2048782d91ea0f5099edf6bc42a0a4c6754f1ae2d77e007e1a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0401854b474ae1a7e468c490e28bb2408d0b79009e10d9777e2ea1b0a7ae114a",
-				"dweb:/ipfs/QmaTbDtaZRxB9dPJVWG5ciWW7GbS4tWu3x6J6NtRs2HN36"
+				"bzz-raw://8d72c258c5b92de1ee160fab4172d5a4036321ff5f695f516743285e73e07a9e",
+				"dweb:/ipfs/QmW8SSsQ3C4Xqd7AAQSWhazxxPYuDFTgsQNcX8EkJduTHD"
 			]
 		}
 	},
