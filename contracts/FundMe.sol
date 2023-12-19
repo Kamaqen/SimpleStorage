@@ -15,7 +15,19 @@ contract FundMe {
 
         // What is reverting?
         // To undo any action from before and send the remaining gas back.
+        // The require keyword defines a condition that needs to be met in order for the transaction to go through.
+        // Otherwise, the transaction reverts.
     }
+
+    function getPrice() {
+        // Requirements: 
+        // ABI 
+        // contract Address 0x694AA1769357215DE4FAC081bf1f309aDC325306
+    }
+
+    function getConversionRate(){}
 
     // function withdraw(){}
 }
+
+// video at 4:09:10!!
