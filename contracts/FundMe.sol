@@ -6,6 +6,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
 
+import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+
 contract FundMe {
     function fund() public payable {
         // Contract addresses can hold funds, just like wallets!
