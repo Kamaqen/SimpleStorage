@@ -9,13 +9,13 @@ pragma solidity ^0.8.8;
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
 contract FundMe {
-    uint256 public minimumUsd = 50;
+    uint256 public minimumUsd = 50 * 1e18;
 
     function fund() public payable {
         // Contract addresses can hold funds, just like wallets!
         // We need to be able to set a min func amount in USD
         // 1. How do we send ETH to this contract?
-        require(msg.value >= minimumUsd, "Didn't send enough!"); // 1e18 == 1 * 10 ** 18 == 1000000000000000000
+        require(getConversionRate(msg.value) >= minimumUsd, "Didn't send enough!"); // 1e18 == 1 * 10 ** 18 == 1000000000000000000
         // 18 decimals
 
         // What is reverting?
