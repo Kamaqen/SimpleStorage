@@ -16,6 +16,7 @@ contract FundMe {
         // We need to be able to set a min func amount in USD
         // 1. How do we send ETH to this contract?
         require(msg.value >= minimumUsd, "Didn't send enough!"); // 1e18 == 1 * 10 ** 18 == 1000000000000000000
+        // 18 decimals
 
         // What is reverting?
         // To undo any action from before and send the remaining gas back.
@@ -23,11 +24,15 @@ contract FundMe {
         // Otherwise, the transaction reverts.
     }
 
-    function getPrice() public{
+    function getPrice() public view returns(uint256) {
         // Requirements (because we are interacting with data outside our project): 
         // ABI 
         // interacting contract Address 0x694AA1769357215DE4FAC081bf1f309aDC325306
-        // AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
+        AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
+        (,int price,,,) = priceFeed.latestRoundData();
+        // ETH in terms of USD
+        // There are 8 decimal places associated with this price feed, eg:_ 300000000000 = 3000.0
+        return uint256(price * 1e10);
     }
 
     function getVersion() public view returns(uint256) {
@@ -35,8 +40,12 @@ contract FundMe {
         return priceFeed.version();
     }
 
-    function getConversionRate() public {}
-
+    function getConversionRate(uint256 ethAmount) public view returns (uint256) {
+        uint256 ethPrice = getPrice();
+        uint256 ethAmountInUsd = (ethPrice * ethAmount) / 1e18;
+        return ethAmountInUsd;
+    }
+    
     // function withdraw(){}
 }
 
