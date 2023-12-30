@@ -12,6 +12,7 @@ contract FundMe {
     uint256 public minimumUsd = 50 * 1e18;
 
     address[] public funders;
+    mapping(address => uint256) public addressToAmountFunded;
 
     function fund() public payable {
         // Contract addresses can hold funds, just like wallets!
@@ -20,7 +21,8 @@ contract FundMe {
         require(getConversionRate(msg.value) >= minimumUsd, "Didn't send enough!"); // 1e18 == 1 * 10 ** 18 == 1000000000000000000
         // 18 decimals
         funders.push(msg.sender);
-        
+        addressToAmountFunded[msg.sender] = msg.value;
+
 
         // What is reverting?
         // To undo any action from before and send the remaining gas back.
