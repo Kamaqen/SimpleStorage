@@ -11,12 +11,16 @@ import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 contract FundMe {
     uint256 public minimumUsd = 50 * 1e18;
 
+    address[] public funders;
+
     function fund() public payable {
         // Contract addresses can hold funds, just like wallets!
         // We need to be able to set a min func amount in USD
         // 1. How do we send ETH to this contract?
         require(getConversionRate(msg.value) >= minimumUsd, "Didn't send enough!"); // 1e18 == 1 * 10 ** 18 == 1000000000000000000
         // 18 decimals
+        funders.push(msg.sender);
+        
 
         // What is reverting?
         // To undo any action from before and send the remaining gas back.
@@ -30,7 +34,7 @@ contract FundMe {
         // interacting contract Address 0x694AA1769357215DE4FAC081bf1f309aDC325306
         AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
         (,int price,,,) = priceFeed.latestRoundData();
-        // ETH in terms of USD
+        // ETH price in terms of USD
         // There are 8 decimal places associated with this price feed, eg:_ 300000000000 = 3000.0
         return uint256(price * 1e10);
     }
@@ -48,5 +52,3 @@ contract FundMe {
     
     // function withdraw(){}
 }
-
-// video at 4:09:10!!
