@@ -32,5 +32,12 @@ contract FundMe {
         // Otherwise, the transaction reverts.
     }
     
-    // function withdraw(){}
+    function withdraw() public {
+        /* starting index, ending logic, step amount */
+        for(uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++) {
+            // code
+            address funder = funders[funderIndex];
+            addressToAmountFunded[funder] = 0;
+        }
+    }
 }
