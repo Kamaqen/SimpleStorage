@@ -67,6 +67,7 @@ contract FundMe {
 
     // Modifiers make it possible to add a code block to a function just by including a keyword in the function declaration.
     // This way, we don't need to copy paste the whole line of code every time we need to use that requirement in a function.
+    // The underscore ("_") signals the place where the function's contents should be placed for execution.
 
     modifier onlyOwner {
         require(msg.sender == owner, "Sender is not owner!");
