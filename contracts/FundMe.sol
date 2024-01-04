@@ -25,12 +25,13 @@ contract FundMe {
 
     // It's necessary to set this contract to only withdraw to the deployer.
     
-    address public owner;
+    address public immutable i_owner; // This variable is assigned ONE TIME, just like minusd, but NOT in the same line.
+    // That's why we can use immutable keyword.
 
     // For efficiency purposes, a constructor is better than another function.
 
     constructor() {
-        owner = msg.sender;
+        i_owner = msg.sender;
     }
 
     function fund() public payable {
@@ -77,7 +78,7 @@ contract FundMe {
     // The underscore ("_") signals the place where the function's contents should be placed for execution.
 
     modifier onlyOwner {
-        require(msg.sender == owner, "Sender is not owner!");
+        require(msg.sender == i_owner, "Sender is not owner!");
         _;
     }
 }
