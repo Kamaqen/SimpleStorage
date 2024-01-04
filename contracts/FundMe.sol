@@ -26,7 +26,7 @@ contract FundMe {
     // It's necessary to set this contract to only withdraw to the deployer.
     
     address public immutable i_owner; // This variable is assigned ONE TIME, just like minusd, but NOT in the same line.
-    // That's why we can use immutable keyword.
+    // That's why we can use immutable keyword. -- no immutable cost: 2552 -- immutable: 439
 
     // For efficiency purposes, a constructor is better than another function.
 
