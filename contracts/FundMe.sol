@@ -8,10 +8,17 @@ pragma solidity ^0.8.8;
 
 import "./PriceConverter.sol";
 
+// constant, immutable
+
+// current gas cost(without tweaks) 756,839
+// cost with constant minimumusd 736,882
+
 contract FundMe {
     using PriceConverter for uint256;
 
-    uint256 public minimumUsd = 50 * 1e18;
+    uint256 public constant MINIMUM_USD = 50 * 1e18;
+    // 347 - constant
+    // 2446 - without constant
 
     address[] public funders;
     mapping(address => uint256) public addressToAmountFunded;
@@ -30,7 +37,7 @@ contract FundMe {
         // Contract addresses can hold funds, just like wallets!
         // We need to be able to set a min func amount in USD
         // 1. How do we send ETH to this contract?
-        require(msg.value.getConversionRate() >= minimumUsd, "Didn't send enough!"); // 1e18 == 1 * 10 ** 18 == 1000000000000000000
+        require(msg.value.getConversionRate() >= MINIMUM_USD, "Didn't send enough!"); // 1e18 == 1 * 10 ** 18 == 1000000000000000000
         // 18 decimals
         funders.push(msg.sender);
         addressToAmountFunded[msg.sender] = msg.value;
