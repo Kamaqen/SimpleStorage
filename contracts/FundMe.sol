@@ -42,7 +42,7 @@ contract FundMe {
         // Otherwise, the transaction reverts.
     }
     
-    function withdraw() public {
+    function withdraw() public onlyOwner {
         /* starting index, ending logic, step amount */
         for(uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++) {
             // code
@@ -63,5 +63,13 @@ contract FundMe {
         // call
         (bool callSuccess, ) = payable(msg.sender).call{value: address(this).balance}("");
         require(callSuccess, "Call failed.");
+    }
+
+    // Modifiers make it possible to add a code block to a function just by including a keyword in the function declaration.
+    // This way, we don't need to copy paste the whole line of code every time we need to use that requirement in a function.
+
+    modifier onlyOwner {
+        require(msg.sender == owner, "Sender is not owner!");
+        _;
     }
 }
