@@ -16,6 +16,16 @@ contract FundMe {
     address[] public funders;
     mapping(address => uint256) public addressToAmountFunded;
 
+    // It's necessary to set this contract to only withdraw to the deployer.
+    
+    address public owner;
+
+    // For efficiency purposes, a constructor is better than another function.
+
+    constructor() {
+        owner = msg.sender;
+    }
+
     function fund() public payable {
         // Contract addresses can hold funds, just like wallets!
         // We need to be able to set a min func amount in USD
