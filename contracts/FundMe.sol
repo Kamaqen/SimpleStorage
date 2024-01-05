@@ -82,6 +82,7 @@ contract FundMe {
     modifier onlyOwner {
         // require(msg.sender == i_owner, "Sender is not owner!");
         // the following is a more gas efficient way of reverting a transaction:
+        // btw: it's more gas efficient because there is no need to store a long string.
         if (msg.sender != i_owner) { revert NotOwner(); }
         _;
     }
