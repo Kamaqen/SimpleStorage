@@ -13,6 +13,8 @@ import "./PriceConverter.sol";
 // current gas cost(without tweaks) 756,839
 // cost with constant minimumusd 736,882
 
+error NotOwner();
+
 contract FundMe {
     using PriceConverter for uint256;
 
@@ -78,7 +80,9 @@ contract FundMe {
     // The underscore ("_") signals the place where the function's contents should be placed for execution.
 
     modifier onlyOwner {
-        require(msg.sender == i_owner, "Sender is not owner!");
+        // require(msg.sender == i_owner, "Sender is not owner!");
+        // the following is a more gas efficient way of reverting a transaction:
+        if (msg.sender != i_owner) { revert NotOwner(); }
         _;
     }
 }
