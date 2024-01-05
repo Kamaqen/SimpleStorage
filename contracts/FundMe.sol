@@ -86,4 +86,6 @@ contract FundMe {
         if (msg.sender != i_owner) { revert NotOwner(); }
         _;
     }
+
+    // 5:15:45 -- advanced solidity receive & feedback
 }
