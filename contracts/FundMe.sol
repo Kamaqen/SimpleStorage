@@ -87,5 +87,9 @@ contract FundMe {
         _;
     }
 
-    // 5:15:45 -- advanced solidity receive & feedback
+    // What happens if someone sends ETH to this contract without calling the fund funciton?
+
+    // receive()
+
+    // fallback()
 }
