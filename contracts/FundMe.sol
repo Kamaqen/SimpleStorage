@@ -97,3 +97,6 @@ contract FundMe {
         fund();
     }
 }
+
+// REMEMBER: try to debug for min 15min max 20min
+// if no luck, ask but WELL FORMATTED
