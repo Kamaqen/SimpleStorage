@@ -1,2 +1,2 @@
 Hello world!
-This is my first solidity course, by Collin Phillips.
+This is my first solidity course, by Patrick Collins!.
